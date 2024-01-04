@@ -244,7 +244,7 @@ def query_api():
                                 count -= 1
                                 continue
                             logger.info("Query: intent " + intent_text +
-                                        " C:" + str(intent['confidence'][:6]))  # The First 6 characters, 0.32445345 -> 0.3244
+                                        " C:" + str(intent['confidence'])) 
                             out_text = get_intent_text(intent_text)
                             intent_text_str = intent_text
                             # striping FAQ and '_'
@@ -322,7 +322,6 @@ def selection_api():
         return '', 200
     except Exception as e:
         return jsonify({"error": str(e)}), 400
-
 
 @app.route("/", methods=['GET'])
 @app.route("/log", methods=['GET'])
