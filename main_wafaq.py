@@ -244,7 +244,7 @@ def query_api():
                                 count -= 1
                                 continue
                             logger.info("Query: intent " + intent_text +
-                                        " C:" + str(intent['confidence']))
+                                        " C:" + str(intent['confidence'][:6]))  # The First 6 characters, 0.32445345 -> 0.3244
                             out_text = get_intent_text(intent_text)
                             intent_text_str = intent_text
                             # striping FAQ and '_'
@@ -259,7 +259,7 @@ def query_api():
                                 'intent': intent_text,
                                 'intent_str': intent_text_str,
                                 'text':  out_text,
-                                'confidence': intent['confidence']
+                                'confidence': intent['confidence'] 
                             }
                             response_data.append(new_item)
                     logger.debug("/query return")
