@@ -42,7 +42,7 @@ table_border_style = """
 """
 
 menu_html = """
-<h1>Watson Assistant FAQ Extension</h1>
+<h1>Watson Assistant FAQ Orchestrator</h1>
 <button onclick="window.location.href = '/selection_log'">&nbsp;Faq Selections&nbsp;</button>&nbsp;&nbsp;
 <button onclick="window.location.href = '/log'">&nbsp;Faq Logs&nbsp;</button>&nbsp;&nbsp;
 <button onclick="window.location.href = '/config'">&nbsp;Faq Config&nbsp;</button>
@@ -244,7 +244,7 @@ def query_api():
                                 count -= 1
                                 continue
                             logger.info("Query: intent " + intent_text +
-                                        " C:" + str(intent['confidence'])) 
+                                        " C:" + str(intent['confidence']))[:6] 
                             out_text = get_intent_text(intent_text)
                             intent_text_str = intent_text
                             # striping FAQ and '_'
